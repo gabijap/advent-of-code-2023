@@ -61,7 +61,7 @@ def getPowers(input):
     return result
 
 def getLines(input):
-    """Reades lines from the file"""
+    """Reads lines from the file"""
 
     file = open(input, 'r')
     lines = file.readlines()
@@ -69,6 +69,6 @@ def getLines(input):
 
 if __name__ == "__main__":
     """Entry point of the script"""
-    
+
     result1 = getPossibleGames("input.txt")
     result2 = getPowers("input.txt")
