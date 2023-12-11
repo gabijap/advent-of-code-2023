@@ -16,7 +16,9 @@ EEE = (EEE, EEE)
 GGG = (GGG, GGG)
 ZZZ = (ZZZ, ZZZ)
 """
+
 def lcm(numbers):
+    """Function for finding least common multiplier"""
     return reduce(lambda a,b: a*b // gcd(a,b), numbers)
 
 def isNodeEndingWith(node, letter):
@@ -24,6 +26,7 @@ def isNodeEndingWith(node, letter):
     return node[-1] == letter
 
 def getCountOfMoveForNode(instruction, mapping, node):
+    """Gets count of moves required to reach a node ending with Z from a node ending with A"""
     moves = 0
     i = 0
     while not isNodeEndingWith(node, 'Z'):
@@ -39,7 +42,7 @@ def getCountOfMoveForNode(instruction, mapping, node):
     return moves
 
 def getCountOfMoves(instruction, mapping):
-    """Gets count of moves required reaching Z from A"""
+    """Gets count of moves required reaching all nodes ending with Z from all nodes ending with A"""
     sources = [node for node in mapping.keys() if isNodeEndingWith(node, 'A')]
     moves = [getCountOfMoveForNode(instruction, mapping, source) for source in sources]
 
